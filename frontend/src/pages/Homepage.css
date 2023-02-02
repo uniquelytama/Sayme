@@ -1,0 +1,115 @@
+.body {
+  background: linear-gradient(
+    142deg,
+    rgba(19, 19, 19, 1) 0%,
+    rgba(62, 62, 62, 0.7861738445378151) 100%
+  );
+}
+
+.fullContainer {
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  background: rgb(19, 19, 19);
+  background: linear-gradient(
+    142deg,
+    rgba(19, 19, 19, 1) 0%,
+    rgba(62, 62, 62, 0.7861738445378151) 100%
+  );
+}
+* {
+  box-sizing: border-box;
+}
+
+.content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10vh;
+}
+#prompt {
+  background-color: transparent;
+  /*  border: none;
+  border-color: transparent; */
+  height: 6vh;
+  width: 100%;
+  font-size: 2rem;
+  color: #ffffff;
+}
+#prompt::placeholder {
+  font-size: 1.5rem;
+  padding-left: 1vw;
+  padding-top: 2vh;
+  color: #ffffffd2;
+}
+.diary {
+  width: 50vw;
+
+  background-color: #ffffff;
+  /*   padding: 2.3vw; */
+  margin-top: 6vh;
+  box-shadow: 1px 5px 8px rgb(0 0 0 / 15%);
+  border-radius: 30px;
+}
+#text {
+  width: 90vmin;
+  height: 40vmin;
+  margin-top: 4vmin;
+  background-color: transparent;
+  padding: 12px 20px;
+  color: #ffffffd2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+}
+
+#text::placeholder {
+  color: #ffffffd2;
+}
+.forms {
+  display: flex;
+  margin: auto;
+  padding-top: 30vh;
+}
+.formHome {
+  display: flex;
+  margin: auto;
+}
+#username {
+  text-align: right;
+  font-weight: 500;
+  padding-left: 2vmin;
+}
+.topBubble {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 4vmin;
+  padding-right: 4vmin;
+  text-align: justify;
+  text-justify: inter-word;
+}
+#confession {
+  text-align: left;
+  font-size: 1.3rem;
+}
+.bottomBubble {
+  padding-left: 4vmin;
+  padding-right: 4vmin;
+  padding-bottom: 2vmin;
+}
+.logo {
+  width: 3vmin;
+  cursor: pointer;
+}
+.reactionTab {
+  display: flex;
+  justify-content: space-evenly;
+  border-top: solid 3px rgba(186, 183, 183, 0.441);
+  padding-top: 2vmin;
+}
+#subject {
+  font-size: 1.6rem;
+}
