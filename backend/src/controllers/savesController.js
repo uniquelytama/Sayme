@@ -1,41 +1,41 @@
 /* eslint-disable camelcase */
-const diaryModel = require("../models/diaryModel");
+const savesModel = require("../models/savesModel");
 
-const diaryController = {
-  updateDiary: async (req, res) => {
+const savesController = {
+  updateSaves: async (req, res) => {
     const { id } = req.params;
     // eslint-disable-next-line camelcase
 
     /*    console.log(bio); */
     /* const hashedPassword = await passwordHash(password); */
 
-    diaryModel
+    savesModel
       .updateOne(req.body, id)
-      .then((diary) => res.send(diary))
+      .then((save) => res.send(save))
       .catch((err) => {
         console.error(err);
         res.sendStatus(500);
       });
   },
-  getDiaries: (req, res) => {
-    diaryModel.findAll().then((diaries) => res.send(diaries));
+  getSaves: (req, res) => {
+    savesModel.findAll().then((save) => res.send(save));
   },
 
-  getOneDiary: (req, res) => {
+  getOneSave: (req, res) => {
     const { id } = req.params;
-    diaryModel.findOne(id).then((user) => {
-      if (user[0]) {
-        res.send(user[0]);
+    savesModel.findOne(id).then((save) => {
+      if (save[0]) {
+        res.send(save[0]);
       } else {
         res.status(404).send("User not found");
       }
     });
   },
-  createDiary: async (req, res) => {
+  createSave: async (req, res) => {
     // eslint-disable-next-line camelcase
     const { user_id, content, subject } = req.body;
 
-    diaryModel
+    savesModel
       .createOne({
         user_id,
         content,
@@ -52,7 +52,7 @@ const diaryController = {
   },
   deleteDiary: (req, res) => {
     const { id } = req.params;
-    diaryModel.deleteOne(id).then((response) => {
+    savesModel.deleteOne(id).then((response) => {
       if (response.affectedRows !== 1) {
         return res.status(404).send(`user ${id} not found`);
       }
@@ -60,4 +60,4 @@ const diaryController = {
     });
   },
 };
-module.exports = diaryController;
+module.exports = savesController;

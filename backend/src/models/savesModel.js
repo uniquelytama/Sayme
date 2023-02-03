@@ -4,32 +4,32 @@ const findAll = () => {
   return database
     .promise()
     .query(
-      "SELECT diary.id, username, content, subject, user_id FROM diary INNER JOIN user ON user.id = diary.user_id "
+      "SELECT saves.id, isSaved FROM saves INNER JOIN diary ON diary.id = saves.diary_id INNER JOIN user ON user.id = saves.user_id"
     )
     .then(([res]) => res);
 };
 const findOne = (id) => {
   return database
     .promise()
-    .query("SELECT * FROM diary WHERE id =?", [Number(id)])
+    .query("SELECT * FROM saves WHERE id =?", [Number(id)])
     .then(([res]) => res);
 };
 const createOne = (payload) => {
   return database
     .promise()
-    .query("INSERT INTO diary SET ?", [payload])
+    .query("INSERT INTO saves SET ?", [payload])
     .then(([res]) => res);
 };
 const deleteOne = (id) => {
   return database
     .promise()
-    .query("DELETE FROM diary WHERE id = ?", [id])
+    .query("DELETE FROM saves WHERE id = ?", [id])
     .then(([res]) => res);
 };
 const updateOne = (payload, id) => {
   return database
     .promise()
-    .query("UPDATE diary SET ? WHERE id = ?", [payload, id])
+    .query("UPDATE saves SET ? WHERE id = ?", [payload, id])
     .then(([res]) => res);
 };
 module.exports = {
